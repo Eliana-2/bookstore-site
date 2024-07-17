@@ -1,9 +1,7 @@
 ---
-interface Props {
-	title: string;
-}
-
 const { title } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <!doctype html>
@@ -16,8 +14,211 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+    <header>
+      <nav>
+        <a class="mobile-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo.svg" alt="Home" class="logo" height="62"></a>
+        <button class="nav-button"><img src="/bookstore-site/icons/menu.svg" alt="Navigation Menu" class="nav-icon"></button>
+        <div class="nav-links">
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/about">About</a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/events">Events</a>
+          <a class="nav-link-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo.svg" alt="Home" class="logo" height="68"></a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/gallery">Gallery</a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <div class="content-container">
+      <slot />
+    </div>
+		<footer>
+			<div class="footer-container">
+        <div class="footer-contact">
+          <p>Contact us</p>
+          <address>1234 Book Street<br/>
+          email@email.com<br/>
+          111-222-333<br />
+          Open 8AM-7PM
+          </address>
+        </div>
+        <a class="footer-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo_dark.svg" alt="Home" class="logo" height="68"></a>
+        <div class="footer-socials">
+          <p>Follow us on</p>
+          <div class="socials">
+            <a class="social link" href="" ><img src="/bookstore-site/icons/instagram.svg" alt="Instagram" class="social" height="37"></a>
+            <a class="social link" href="" ><img src=/bookstore-site/icons/facebook.svg alt="Facebook" class="social" height="37"></a>
+            <a class="social link" href="" ><img src="/bookstore-site/icons/twitter.svg" alt="Twitter" class="social" height="37"></a>
+          </div>
+        </div>
+      </div>
+		</footer>
 	</body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: 'Abril Fatface';
+    src: url('/bookstore-site/fonts/abril-fatface.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Merriweather';
+    src: url('/bookstore-site/fonts/merriweather.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  :root {
+    font-size: 120%;
+    --heading-font: 'Abril Fatface', serif;
+    --body-font: serif;
+    --sand: #e7d8d0;
+    --dark-sand: #d6bcae;
+    --light-blue: #d0dfe7;
+  }
+  html {
+    font-family: var(--body-font);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @media (max-width: 1000px) {
+    :root {
+      font-size: 110%;
+    }
+  }
 </style>
+<style>
+   body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    padding: 2rem;
+  }
+  nav {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .mobile-logo {
+    width: 8rem;
+    display: none;
+  }
+  .nav-button {
+    margin-left: auto;
+    display: none;
+    background-color: inherit;
+    border: none;
+  }
+  .nav-icon {
+    width: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  nav a {
+    color: black;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+  .logo {
+    width: 8rem;
+  }
+  .nav-links {
+    display; flex;
+  }
+  .content-container {
+    flex: 1;
+    height: auto;
+    background-color: var(--sand);
+  }
+  footer {
+    background-color: black;
+    padding: 2rem;
+    color: white;
+  }
+  footer p {
+    font-size: 1.1rem;
+  }
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-logo {
+    width: 8rem;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .socials {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .social {
+    width: 2rem;
+  }
+  @media (max-width: 600px) {
+    header {
+      position: relative;
+      z-index: 5;
+    }
+    nav {
+      margin: 0;
+      display: flex;
+    }
+    .mobile-logo {
+      display: inline;
+    }
+    .nav-button {
+      display: inline-block;
+    }
+    .nav-link-logo {
+      display: none;
+    }
+    .nav-links {
+      z-index: 6;
+      opacity: 90%;
+      background-color: white;
+      display: none;
+      margin-top: 5.9rem;
+      padding: 2rem;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .footer-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  .nav-links-toggle {
+    display: flex;
+  }
+</style>
+<script>
+  document.querySelector('.nav-button').addEventListener('click', (e) => {
+    e.currentTarget.nextElementSibling.classList.toggle('nav-links-toggle');
+  })
+</script>
