@@ -1,0 +1,24 @@
+---
+const {href="/bookstore-site/contact", isBlue=false} = Astro.props;
+---
+
+<a href={href} class:list={{blue: isBlue}}>
+  <slot/>
+</a>
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: var(--dark-sand);
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .blue {
+    background-color: var(--light-blue);
+  }
+</style>
