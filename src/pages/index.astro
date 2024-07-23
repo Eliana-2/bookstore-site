@@ -24,11 +24,13 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
         <div class="book-cover">
           <div class="pages">
             <div class="first-page">
-              <h1>Book Title</h1>
-              <p>Book summary that goes on and on about the book. It's a great summary, really. So concise and easy to read. It tells you just what this site is about.</p>
+              <h1>Haven Bookstore</h1>
+              <p>We are a small, local bookstore with a focus on creating a sense of community and fostering a love for books and reading.</p>
             </div>
             <div class="second-page">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur delectus, a voluptatem vitae tenetur eveniet dignissimos, quaerat libero impedit at qui facilis illum porro tempore cum maiores minima repudiandae praesentium.</p>
+              <h2>What we do</h2>
+              <p>Our main thing is, of course, selling books. Whether you're looking for new titles, rare second hand finds or anything in between 
+                 - you can rely on us. We also organize plenty of events like book signings, reading workshops and many others.</p>
             </div>
           </div>
         </div>
@@ -121,7 +123,8 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
     gap: 2rem;
   }
 
-  .first-page h1 {
+  .first-page h1,
+  .second-page h2 {
     margin-top: 2rem;
     text-align: center;
   }
@@ -137,7 +140,7 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
   .newsletter-cta {
     position: relative;
     z-index: 1;
-    height: 300px;
+    min-height: 300px;
   }
 
   .newsletter-cta-content {
@@ -159,7 +162,7 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
     z-index: 1;
     content: '';
     background-color: white;
-    height: 300px;
+    height: 100%;
     width: 100%;
     opacity: 50%;
   }
@@ -253,6 +256,87 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
 
     .single-card + .single-card {
       margin-top: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      display: block;
+      position: relative;
+      min-height: 600px;
+      max-height: 1100px;
+    }
+
+    .hero-image {
+      border-radius: 0;
+      height: 600px;
+      max-height: 1100px;
+      background-position: center;
+    }
+
+    .hero-image::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      content: '';
+      background-color: black;
+      height: 600px;
+      max-height: 1100px;
+      width: 100%;
+      opacity: 70%;
+    }
+
+    .book {
+      position: absolute;
+      top: 0;
+      height: 600px;
+      max-height: 1100px;
+    }
+
+    .pages {
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    .first-page,
+    .first-page h1 {
+      text-align: left;
+    }
+
+    .second-page,
+    .second-page h2 {
+      text-align: right;
+    }
+
+    .first-page, .second-page {
+      width: 100%;
+      color: white;
+      z-index: 2;
+    }
+
+    .pages, .first-page, .second-page {
+      box-shadow: none;
+      border: none;
+      background-color: transparent;
+    }
+
+    .book-cover {
+      background-color: transparent;
+      min-width: 0;
+    }
+
+    .single-card-content  p{
+      padding-inline: 0;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .book,
+    .hero,
+    .hero-image,
+    .hero-image::after {
+      height: 750px;
     }
   }
 </style>
