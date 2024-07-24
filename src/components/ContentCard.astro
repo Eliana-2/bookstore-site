@@ -21,6 +21,7 @@ const {img, heading, text, isLeft=false, hasContact=false} = Astro.props;
     display: flex;
     gap: 0.5rem;
     background-color: white;
+    border-radius: 5px;
   }
   .left {
     flex-direction: row-reverse;
@@ -28,6 +29,10 @@ const {img, heading, text, isLeft=false, hasContact=false} = Astro.props;
   img {
     width: 50%;
     height: auto;
+    border-radius: 5px 0 0 5px;
+  }
+  .left img {
+    border-radius: 0 5px 5px 0;
   }
   .text {
     padding: 1rem;
@@ -47,12 +52,13 @@ const {img, heading, text, isLeft=false, hasContact=false} = Astro.props;
     margin-bottom: auto;
   }
   @media (max-width: 800px) {
-    section {
+    section, .left {
       flex-direction: column;
       align-items: center;
     }
-    img {
+    img, .left img {
       width: 100%;
+      border-radius: 0;
     }
     .text {
       width: auto;
