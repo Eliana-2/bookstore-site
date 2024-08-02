@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EventCard from '../components/EventCard.astro'
+import { getCollection, getEntry } from 'astro:content';
+const allEvents = await getCollection('events');
+
+
+const { event } = Astro.params;
+const { entry } = Astro.props;
+---
+
+<Layout>
+  <main>
+    {allEvents.map(eventsEntry => (
+      <EventCard title={eventsEntry.data.title} date={eventsEntry.data.date} summary={eventsEntry.data.summary} 
+       image={eventsEntry.data.image} slug={'events/' + eventsEntry.slug}></EventCard>
+    ))}
+    <!-- {allEvents.map(eventsEntry => (
+      <h2>{eventsEntry.data.title}</h2>
+      <p>{eventsEntry.data.summary}</p>
+      <img src={eventsEntry.data.image}/>
+      <a href={'events/' + eventsEntry.slug}>{'events/' + eventsEntry.slug}</a>
+    ))} -->
+  </main>
+</Layout>
+
+<style>
+
+</style>
+
+<script>
+
+</script>
