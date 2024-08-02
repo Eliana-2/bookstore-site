@@ -21,12 +21,12 @@ const {title, date, summary, image, slug} = Astro.props;
   }
 
   section {
-    margin: 3rem;
+    place-self: center;
     outline: 1px solid black;
     display: flex;
     min-width: 300px;
     max-width: 450px;
-    height: 300px;
+    height: 350px;
   }
 
   .content {
@@ -51,6 +51,7 @@ const {title, date, summary, image, slug} = Astro.props;
     section {
       flex-direction: column;
       height: auto;
+      max-width: 100%;
     }
   }
 </style>
