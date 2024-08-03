@@ -1,6 +1,6 @@
 ---
 import LinkButton from './LinkButton.astro'
-const {title, date, summary, image, slug} = Astro.props;
+const {title, date, time, summary, image, slug} = Astro.props;
 ---
 
 <section>
@@ -8,6 +8,7 @@ const {title, date, summary, image, slug} = Astro.props;
   <div class="content">
     <h2>{title}</h2>
     <p>{date}</p>
+    <p>{time}</p>
     <p class="summary">{summary}</p>
     <LinkButton href={slug}>Details</LinkButton>
   </div>
@@ -25,8 +26,9 @@ const {title, date, summary, image, slug} = Astro.props;
     outline: 1px solid black;
     display: flex;
     min-width: 300px;
-    max-width: 450px;
+    max-width: 600px;
     height: 350px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
   }
 
   .content {

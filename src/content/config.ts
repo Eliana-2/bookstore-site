@@ -5,10 +5,10 @@ const eventCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
-    author: z.string(),
     summary: z.string(),
     image: z.any(),
-    date: z.any()
+    date: z.any(),
+    time: z.any(),
   })
  });
 // 3. Export a single `collections` object to register your collection(s)

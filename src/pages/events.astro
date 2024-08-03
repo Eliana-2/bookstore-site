@@ -14,7 +14,7 @@ const { entry } = Astro.props;
     <h1>Events</h1>
     <div class="container">
       {allEvents.map(eventsEntry => (
-        <EventCard title={eventsEntry.data.title} date={eventsEntry.data.date} summary={eventsEntry.data.summary} 
+        <EventCard title={eventsEntry.data.title} date={eventsEntry.data.date} time={eventsEntry.data.time} summary={eventsEntry.data.summary} 
         image={eventsEntry.data.image} slug={'events/' + eventsEntry.slug}></EventCard>
       ))}
     </div>
@@ -35,10 +35,18 @@ const { entry } = Astro.props;
   }
 
   .container {
-    margin: 2rem;
+    max-width: 1200px;
+    margin-block: 2rem;
+    margin-inline: auto;
     gap: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 1250px) {
+    .container {
+      margin-inline: 2rem;
+    }
   }
 
   @media (max-width: 700px) {
