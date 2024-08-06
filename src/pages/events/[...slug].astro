@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry } from 'astro:content';
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  return events.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+console.log(await getEntry('events', 'event1'))
+
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <main>
+    <h1>{entry.data.title}</h1>
+    <p class="date">{entry.data.date}</p>
+    <p class="time">{entry.data.time}</p>
+    <img src={entry.data.image} alt="Author Bookson signing a book">
+    <Content />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin-block: 2rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 70ch;
+  }
+
+  h1,
+  .date,
+  .time {
+    text-align: center;
+  }
+
+  img {
+    width: 30%;
+    height: 30%;
+    margin-inline: auto;
+    margin-block: 1rem;
+  }
+
+  @media (max-width: 650px) {
+    main {
+      padding-inline: 1rem;
+    }
+  }
+
+</style>
+
+<script>
+
+</script>
