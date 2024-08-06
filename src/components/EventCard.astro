@@ -44,10 +44,21 @@ const {title, date, time, summary, image, slug} = Astro.props;
     margin-bottom: auto;
   }
 
+  @media (max-width: 876px) {
+    section {
+      height: 450px;
+    }
+  }
+
   @media (max-width: 700px) {
     img,
-    .content {
+    .content,
+    section {
       width: 100%;
+    }
+
+    img {
+      max-height: 400px;
     }
 
     section {
