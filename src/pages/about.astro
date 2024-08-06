@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContentCard from '../components/ContentCard.astro';
+import LinkButton from '../components/LinkButton.astro';
+---
+
+<Layout title="Haven Bookstore - About">
+  <main>
+    <div class="hero">
+      <section class="hero-content">
+        <h1>About Us</h1>
+      </section>
+    </div>
+    <div class="container">
+      <ContentCard img="/bookstore-site/bookshelves.jpg" heading="Our Story" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?"></ContentCard>
+    </div>
+    <div class="container contact-container">
+      <section class="contact">
+        <h2>Visit us today!</h2>
+        <LinkButton>Visit Us</LinkButton>
+      </section>
+    </div>
+    <div class="container">
+      <ContentCard img="/bookstore-site/reading.jpg" heading="Our Mission" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?" isLeft={true}></ContentCard>
+    </div>
+  </main>
+</Layout>
+<style>
+  .hero {
+    position: relative;
+    z-index: 1;
+    height: 50vh;
+  }
+  .hero:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    min-height: 200px;
+    height: 50vh;
+    width: 100%;
+    background-image: url('/bookstore-site/about-hero.jpg');
+    background-size: cover;
+    background-position: top;
+  }
+  h1 {
+    color: white;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-content:after {
+    background-color: black;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+  }
+  .container {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  .contact-container {
+    padding: 2rem;
+    background-color: var(--light-blue);
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  @media (max-width: 600px) {
+    .container {
+      padding: 2rem 1rem;
+    }
+  }
+  @media (max-width: 400px) {
+    .container {
+      padding: 0rem;
+    }
+    .contact-container {
+      padding: 2rem 0;
+    }
+  }
+</style>

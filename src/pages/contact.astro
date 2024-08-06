@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {Image} from 'astro:assets'
+---
+
+<Layout title="Haven Bookstore Contact">
+  <main>
+    <h1>Where to find us</h1>
+    <section class="contact-info-container">
+      <div class="contact-info-content">
+        <h2>Haven Bookstore</h2>
+        <p>Address: 1234 Book Street </br>
+           Email: email@email.com </br>
+           Telephone Number: 111-222-333 </br>
+           Open on: </br>
+           Monday - Friday: 8AM - 7PM </br>
+           Saturday: 10AM - 4PM </p>
+      </div>
+      <div>
+        <Image src="/bookstore-site/contact-image.jpg" alt="People sitting and reading books among bookshelves." width="1920" height="1347"></Image>
+      </div>
+
+    </section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43260.110151918925!2d-122.45800366549737!3d37.766324446545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2spl!4v1721848173143!5m2!1sen!2spl" 
+     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </main>
+</Layout>
+
+<style>
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 2rem;
+  }
+
+  .contact-info-container {
+    padding: 2rem;
+    display: flex;
+    max-width: 1200px;
+    gap: 5rem;
+  }
+
+  .contact-info-container img {
+    max-width: 600px;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .contact-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  iframe {
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 720px) {
+    .contact-info-container {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+  }
+</style>
