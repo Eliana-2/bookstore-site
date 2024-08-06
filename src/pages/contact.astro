@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {Image} from 'astro:assets'
+import { Image } from 'astro:assets';
+import contactImage from '../images/contact-image.jpg'
 ---
 
 <Layout title="Haven Bookstore Contact">
@@ -17,7 +18,7 @@ import {Image} from 'astro:assets'
            Saturday: 10AM - 4PM </p>
       </div>
       <div>
-        <Image src="/bookstore-site/contact-image.jpg" alt="People sitting and reading books among bookshelves." width="1920" height="1347"></Image>
+        <Image src={contactImage} alt="People sitting and reading books among bookshelves." width="1920" height="1347"></Image>
       </div>
 
     </section>

@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ContentCard from '../components/ContentCard.astro';
 import LinkButton from '../components/LinkButton.astro';
+import bookshelvesImage from '../images/bookshelves.jpg';
+import readingImage from '../images/reading.jpg';
 ---
 
 <Layout title="Haven Bookstore - About">
@@ -12,7 +14,7 @@ import LinkButton from '../components/LinkButton.astro';
       </section>
     </div>
     <div class="container">
-      <ContentCard img="/bookstore-site/bookshelves.jpg" heading="Our Story" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?"></ContentCard>
+      <ContentCard image={bookshelvesImage} heading="Our Story" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?"></ContentCard>
     </div>
     <div class="container contact-container">
       <section class="contact">
@@ -21,7 +23,7 @@ import LinkButton from '../components/LinkButton.astro';
       </section>
     </div>
     <div class="container">
-      <ContentCard img="/bookstore-site/reading.jpg" heading="Our Mission" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?" isLeft={true}></ContentCard>
+      <ContentCard image={readingImage} heading="Our Mission" text=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam fugiat porro dolorum, architecto sint atque hic maiores saepe! Unde facilis debitis eius perferendis reiciendis blanditiis dolor nulla perspiciatis ex consectetur?" isLeft={true}></ContentCard>
     </div>
   </main>
 </Layout>

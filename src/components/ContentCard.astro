@@ -1,10 +1,12 @@
 ---
 import LinkButton from './LinkButton.astro';
-const {img, heading, text, isLeft=false, hasContact=false} = Astro.props;
+import { Image } from 'astro:assets';
+const {image, heading, text, isLeft=false, hasContact=false} = Astro.props;
 ---
 
 <section class:list={{left: isLeft}}>
-  <img src={img} alt="">
+  <Image src={image} alt=""></Image>
+  <!-- <img src={img} alt=""> -->
   <div class:list={["text", {contact: hasContact}]}>
     <h2>{heading}</h2>
     <p class:list={{margin: hasContact}}>{text}</p>

@@ -2,14 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import LinkButton from '../components/LinkButton.astro';
 import ContentCard from '../components/ContentCard.astro';
-import { Image } from 'astro:assets';
 import { getImage } from "astro:assets";
+import contactImage from '../images/contact.jpg' 
 
 // Astro built-in image optimization
-import heroBackground from "./public/hero.jpg";
-import newsletterCtaBackground from "./public/books.jpg";
-import aboutUsBackground from "./public/about-us.jpg";
-import eventsBackground from "./public/events.jpg";
+import heroBackground from "../images/hero.jpg";
+import newsletterCtaBackground from "../images/books.jpg";
+import aboutUsBackground from "../images/about-us.jpg";
+import eventsBackground from "../images/events.jpg";
 const optimizedHeroBackground = await getImage({src: heroBackground, format: 'webp'});
 const optimizedNewsletterBackground = await getImage({src: newsletterCtaBackground, format: 'webp'});
 const optimizedAboutUsBackground = await getImage({src: aboutUsBackground, format: 'webp'});
@@ -65,7 +65,7 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
     </section>
   </div>
   <div class="contentcard">
-    <ContentCard img="/bookstore-site/contact.jpg" heading="Where you can find us" text="Placeholder text here" hasContact=true></ContentCard>
+    <ContentCard image={contactImage} heading="Where you can find us" text="Placeholder text here" hasContact=true></ContentCard>
   </div>
   </main>
 </Layout>
