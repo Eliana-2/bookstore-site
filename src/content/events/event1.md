@@ -1,7 +1,7 @@
 ---
 title: Book Signing With Author Bookson
 summary: Book signing with a popular author of the Books series
-image: /bookstore-site/book-signing.jpg
+image: ../../images/book-signing.jpg
 date: September 10, 2024 
 time: 4PM - 8PM
 ---

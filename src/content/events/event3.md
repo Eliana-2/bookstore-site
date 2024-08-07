@@ -1,7 +1,7 @@
 ---
 title: Children Story Time
 summary: Reading event aimed at children
-image: /bookstore-site/storytime.jpg
+image: ../../images/storytime.jpg
 date: October 10, 2024
 time: 7PM-8PM
 ---
