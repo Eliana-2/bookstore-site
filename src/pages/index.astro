@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LinkButton from '../components/LinkButton.astro';
 import ContentCard from '../components/ContentCard.astro';
-import { getImage } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import contactImage from '../images/contact.jpg' 
 
 // Astro built-in image optimization
@@ -11,9 +11,6 @@ import newsletterCtaBackground from "../images/books.jpg";
 import aboutUsBackground from "../images/about-us.jpg";
 import eventsBackground from "../images/events.jpg";
 const optimizedHeroBackground = await getImage({src: heroBackground, format: 'webp'});
-const optimizedNewsletterBackground = await getImage({src: newsletterCtaBackground, format: 'webp'});
-const optimizedAboutUsBackground = await getImage({src: aboutUsBackground, format: 'webp'});
-const optimizedEventsBackground = await getImage({src: eventsBackground, format: 'webp'});
 ---
 
 <Layout title="Haven Bookstore - Landing Page">
@@ -36,41 +33,67 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
         </div>
       </div>
     </div>
-  <section class="newsletter-cta" style={`background-image: url(${optimizedNewsletterBackground.src});`}>
+  <section class="newsletter-cta">
+    <Image class="background" src={newsletterCtaBackground} alt="" width=1919 height=535 />
     <div class="newsletter-cta-content">
       <h2>Subscribe to the newsletter now</h2>
       <p>Do you like books and events and other cool stuff? We have lots of books and events and other cool stuff 
          so subscribe to our newsletter not to miss anything.</p>
-      <LinkButton href="#">Subscribe now</LinkButton>
+      <dialog>
+        <button id="modal-close">X</button>
+        <form>
+          <label for="email">Please enter you e-mail address to subscribe to our newsletter</label>
+          <input type="email" id="email" name="email">
+          <button id="modal-submit">Submit</button>
+        </form>
+      </dialog>
+      <button id="modal-open">Subscribe</button>
     </div>
   </section>
   <div class="cards">
-    <section class="single-card" style={`background-image: url(${optimizedEventsBackground.src});`}>
+    <!-- <section class="single-card" style={`background-image: url(${optimizedEventsBackground.src});`}> -->
+    <section class="single-card">
+      <Image class="background rounded" src={eventsBackground} alt="" />
       <div class="single-card-content">
         <div>
           <h2>Events</h2>
           <p>We have lots of events, workshops, book signings and other things. Check our schedule!</p>
         </div>
-        <LinkButton href="#" isBlue=true>Learn More</LinkButton>
+        <LinkButton href="events" isBlue=true>Learn More</LinkButton>
       </div>
     </section>
-    <section class="single-card" style={`background-image: url(${optimizedAboutUsBackground.src});`}>
+    <section class="single-card">
+      <Image class="background rounded" src={aboutUsBackground} alt="" />
       <div class="single-card-content">
         <div>
           <h2>About Us</h2>
           <p>Want to learn about why we are such a popular location for book fans?</p>
         </div>
-        <LinkButton href="#" isBlue=true>Learn More</LinkButton>
+        <LinkButton href="about" isBlue=true>Learn More</LinkButton>
       </div>
     </section>
   </div>
   <div class="contentcard">
-    <ContentCard image={contactImage} heading="Where you can find us" text="Placeholder text here" hasContact=true></ContentCard>
+    <ContentCard image={contactImage} heading="Where you can find us" 
+     text="Haven Bookstore is located at 1234 Book Street, Los Angeles, CA. We're open from 8AM-7PM most days. Feel free to drop by and checkout everything we have to offer." 
+     hasContact=true>
+    </ContentCard>
   </div>
   </main>
 </Layout>
 
 <style>
+  .background {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .rounded {
+    border-radius: 5px;
+  }
+
   img {
     width: 100%;
   }
@@ -165,6 +188,73 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
     height: 100%;
     width: 100%;
     opacity: 50%;
+  }
+
+  #modal-open {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: var(--dark-sand);
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+    display: inline-block;
+    border: none;
+    font-family: inherit;
+  }
+
+  dialog {
+    margin: auto;
+    flex-direction: column;
+    padding: 2rem;
+    border: none;
+    background-color: var(--sand);
+    border-radius: 5px;
+  }
+
+  dialog button {
+    width: fit-content;
+  }
+
+  #modal-submit:hover,
+  #modal-open:hover,
+  #modal-close:hover {
+    background-color: #c7a999;
+  }
+
+  #modal-close {
+    align-self: flex-end;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1rem;
+    background-color: var(--dark-sand);
+    border: none;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    font: inherit;
+  }
+
+  #modal-submit {
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: var(--dark-sand);
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 20%);
+    display: inline-block;
+    border: none;
   }
 
   .cards {
@@ -340,3 +430,34 @@ const optimizedEventsBackground = await getImage({src: eventsBackground, format:
     }
   }
 </style>
+
+<script>
+  const dialog = document.querySelector("dialog");
+  const showButton = document.querySelector("#modal-open");
+  const closeButton = document.querySelector("#modal-close");
+  const submitButton = document.querySelector("#modal-submit");
+  const form = document.querySelector("form");
+
+  form.addEventListener("click", (e) => {
+    e.preventDefault();
+  })
+
+
+  // "Show the dialog" button opens the dialog modally
+  showButton.addEventListener("click", () => {
+    dialog.showModal();
+    dialog.style.display = "flex";
+  });
+
+  // "Close" button closes the dialog
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+    dialog.style.display = "none";
+  });
+
+  submitButton.addEventListener("click", () => {
+    dialog.close();
+    dialog.style.display = "none";
+  })
+
+</script>
