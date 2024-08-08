@@ -1,5 +1,5 @@
 ---
-title: Children Story Time
+title: Children's Story Time
 summary: Reading event aimed at children
 image: ../../images/storytime.jpg
 date: October 10, 2024
