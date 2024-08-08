@@ -15,7 +15,7 @@ const { entry } = Astro.props;
     <div class="container">
       {allEvents.map(eventsEntry => (
         <EventCard title={eventsEntry.data.title} date={eventsEntry.data.date} time={eventsEntry.data.time} summary={eventsEntry.data.summary} 
-        image={eventsEntry.data.image} slug={'events/' + eventsEntry.slug}></EventCard>
+        image={eventsEntry.data.image} slug={'/bookstore-site/events/' + eventsEntry.slug}></EventCard>
       ))}
     </div>
   </main>
