@@ -1,5 +1,5 @@
 ---
-title: Book Signing With Author U.L. Ridiculous
+title: Book Signing With U.L. Ridiculous
 summary: Book signing with a popular author of the Moo series
 image: ../../images/book-signing.jpg
 date: September 10, 2024 

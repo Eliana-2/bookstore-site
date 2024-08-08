@@ -49,6 +49,12 @@ const { entry } = Astro.props;
     }
   }
 
+  @media (max-width: 850px) {
+    .container {
+      margin-inline: 1.5rem;
+    }
+  }
+
   @media (max-width: 700px) {
     .container {
       grid-template-columns: 1fr;
