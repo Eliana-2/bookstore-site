@@ -1,7 +1,7 @@
 ---
 title: Haven Book Club Meeting
 summary: Monthly meeting of our book club
-image: /bookstore-site/bookclub.jpg
+image: ../../images/bookclub.jpg
 date: September 15, 2024
 time: 7PM
 ---

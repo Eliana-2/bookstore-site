@@ -1,7 +1,7 @@
 ---
 title: Writer's Workshop
 summary: Workshop for experienced and aspiring writers alike
-image: /bookstore-site/writing.jpg
+image: ../../images/writing.jpg
 date: November 21, 2024
 time: 2PM-6PM
 ---

@@ -1,20 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {Image} from 'astro:assets'
+import { Image } from 'astro:assets'
+import galleryImage1 from '../images/gallery1.jpg'
+import galleryImage2 from '../images/gallery2.jpg'
+import galleryImage3 from '../images/gallery3.jpg'
+import galleryImage4 from '../images/gallery4.jpg'
+import galleryImage5 from '../images/gallery5.jpg'
+import galleryImage6 from '../images/gallery6.jpg'
+import galleryImage7 from '../images/gallery7.jpg'
+import galleryImage8 from '../images/gallery8.jpg'
 ---
 
 <Layout title="Haven Bookstore Gallery">
   <main>
     <h1>Gallery</h1>
     <div class="gallery">
-      <Image src="/bookstore-site/gallery1.jpg" alt="" width="1920" height="1272"></Image>
-      <Image src="/bookstore-site/gallery2.jpg" alt="" width="1920" height="729"></Image>
-      <Image src="/bookstore-site/gallery3.jpg" alt="" width="1920" height="1080"></Image>
-      <Image src="/bookstore-site/gallery4.jpg" alt="" width="1920" height="1280"></Image>
-      <Image src="/bookstore-site/gallery5.jpg" alt="" width="1920" height="1439"></Image>
-      <Image src="/bookstore-site/gallery6.jpg" alt="" width="1920" height="1282"></Image>
-      <Image src="/bookstore-site/gallery7.jpg" alt="" width="1280" height="1920"></Image>
-      <Image src="/bookstore-site/gallery8.jpg" alt="" width="1920" height="1439"></Image>
+      <Image src={galleryImage1} alt="" width="1920" height="1272"></Image>
+      <Image src={galleryImage2} alt="" width="1920" height="729"></Image>
+      <Image src={galleryImage3} alt="" width="1920" height="1080"></Image>
+      <Image src={galleryImage4} alt="" width="1920" height="1280"></Image>
+      <Image src={galleryImage5} alt="" width="1920" height="1439"></Image>
+      <Image src={galleryImage6} alt="" width="1920" height="1282"></Image>
+      <Image src={galleryImage7} alt="" width="1280" height="1920"></Image>
+      <Image src={galleryImage8} alt="" width="1920" height="1439"></Image>
     </div>
     
   </main>
