@@ -10,10 +10,10 @@ const currentPath = pathname.slice(1);
 		<meta charset="UTF-8" />
 		<meta name="description" content="Haven Bookstore" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/bookstore-site/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/bookstore-site/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/bookstore-site/favicon-16x16.png">
-    <link rel="manifest" href="/bookstore-site/site.webmanifest">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 		<title>{title}</title>
@@ -21,14 +21,14 @@ const currentPath = pathname.slice(1);
 	<body>
     <header>
       <nav>
-        <a class="mobile-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo.svg" alt="Home" class="logo" height="62"></a>
-        <button class="nav-button"><img src="/bookstore-site/icons/menu.svg" alt="Navigation Menu" class="nav-icon"></button>
+        <a class="mobile-logo" href=""><img src="icons/logo.svg" alt="Home" class="logo" height="62"></a>
+        <button class="nav-button"><img src="icons/menu.svg" alt="Navigation Menu" class="nav-icon"></button>
         <div class="nav-links">
-          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/about">About</a>
-          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/events">Events</a>
-          <a class="nav-link-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo.svg" alt="Home" class="logo" height="68"></a>
-          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/gallery">Gallery</a>
-          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="/bookstore-site/contact">Contact</a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="about">About</a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="events">Events</a>
+          <a class="nav-link-logo" href=""><img src="icons/logo.svg" alt="Home" class="logo" height="68"></a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="gallery">Gallery</a>
+          <a class={currentPath === "bookstore-site" ? "nav-link active" : "nav-link"} href="contact">Contact</a>
         </div>
       </nav>
     </header>
@@ -45,13 +45,13 @@ const currentPath = pathname.slice(1);
           Open 8AM-7PM
           </address>
         </div>
-        <a class="footer-logo" href="/bookstore-site/"><img src="/bookstore-site/icons/logo_dark.svg" alt="Haven Bookstore Home" class="logo" height="68"></a>
+        <a class="footer-logo" href=""><img src="icons/logo_dark.svg" alt="Haven Bookstore Home" class="logo" height="68"></a>
         <div class="footer-socials">
           <p>Follow us on</p>
           <div class="socials">
-            <a class="social link" href="" ><img src="/bookstore-site/icons/instagram.svg" alt="Instagram" class="social" height="37"></a>
-            <a class="social link" href="" ><img src=/bookstore-site/icons/facebook.svg alt="Facebook" class="social" height="37"></a>
-            <a class="social link" href="" ><img src="/bookstore-site/icons/twitter.svg" alt="Twitter" class="social" height="37"></a>
+            <a class="social link" href="" ><img src="icons/instagram.svg" alt="Instagram" class="social" height="37"></a>
+            <a class="social link" href="" ><img src=icons/facebook.svg alt="Facebook" class="social" height="37"></a>
+            <a class="social link" href="" ><img src="icons/twitter.svg" alt="Twitter" class="social" height="37"></a>
           </div>
         </div>
       </div>
@@ -61,14 +61,14 @@ const currentPath = pathname.slice(1);
 <style is:global>
   @font-face {
     font-family: 'Libre Baskerville';
-    src: url('/bookstore-site/fonts/libre-baskerville-v14-latin-regular.woff2') format('woff2');
+    src: url('fonts/libre-baskerville-v14-latin-regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: 'Merriweather';
-    src: url('/bookstore-site/fonts/merriweather.woff2') format('woff2');
+    src: url('fonts/merriweather.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
