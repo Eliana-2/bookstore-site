@@ -16,7 +16,7 @@ const optimizedHeroBackground = await getImage({src: heroBackground, format: 'we
 <Layout title="Haven Bookstore - Landing Page">
   <main>
     <div class="hero">
-      <div class="hero-image" style={`background-image: url(${optimizedHeroBackground.src});`}></div>
+      <div class="hero-image" style={`background-image: image-set(url(${optimizedHeroBackground.src});`}></div>
       <div class="book">
         <div class="book-cover">
           <div class="pages">
@@ -59,7 +59,7 @@ const optimizedHeroBackground = await getImage({src: heroBackground, format: 'we
           <h2>Events</h2>
           <p>We have lots of events, workshops, book signings and other things. Check our schedule!</p>
         </div>
-        <LinkButton href="/events" isBlue=true>Learn More</LinkButton>
+        <LinkButton href="/events" isBlue=true>See events</LinkButton>
       </div>
     </section>
     <section class="single-card">
@@ -69,7 +69,7 @@ const optimizedHeroBackground = await getImage({src: heroBackground, format: 'we
           <h2>About Us</h2>
           <p>Want to learn about why we are such a popular location for book fans?</p>
         </div>
-        <LinkButton href="/about" isBlue=true>Learn More</LinkButton>
+        <LinkButton href="/about" isBlue=true>Our story</LinkButton>
       </div>
     </section>
   </div>
