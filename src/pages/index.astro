@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LinkButton from '../components/LinkButton.astro';
 import ContentCard from '../components/ContentCard.astro';
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import contactImage from '../images/contact.jpg' 
 
 // Astro built-in image optimization
@@ -10,13 +10,12 @@ import heroBackground from "../images/hero.jpg";
 import newsletterCtaBackground from "../images/books.jpg";
 import aboutUsBackground from "../images/about-us.jpg";
 import eventsBackground from "../images/events.jpg";
-const optimizedHeroBackground = await getImage({src: heroBackground, format: 'webp'});
 ---
 
 <Layout title="Haven Bookstore - Landing Page">
   <main>
     <div class="hero">
-      <div class="hero-image" style={`background-image: image-set(url(${optimizedHeroBackground.src});`}></div>
+      <div class="hero-image"></div>
       <div class="book">
         <div class="book-cover">
           <div class="pages">
@@ -102,6 +101,7 @@ const optimizedHeroBackground = await getImage({src: heroBackground, format: 'we
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 0.25fr 0.55fr 0.2fr;
+    background-image: url('/hero.webp');
   }
 
   .book {
@@ -355,6 +355,8 @@ const optimizedHeroBackground = await getImage({src: heroBackground, format: 'we
       position: relative;
       min-height: 600px;
       max-height: 1100px;
+      background-image: url('/heroSmall.webp');
+      background-position: center;
     }
 
     .hero-image {
